@@ -8,8 +8,49 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
 <link rel="apple-touch-icon" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
 
-<title>Gull Group | Amazon Commerce, Web & Outreach Growth Partner</title>
-<meta name="description" content="Gull Group is the umbrella for Gull Web, Gull Commerce, and Gull Outreach — web development, Amazon management, and B2B lead generation under one roof." />
+<title>Gull Group | Amazon Commerce, Web Development & B2B Outreach Agency</title>
+<meta name="description" content="Gull Group is the umbrella for Gull Web, Gull Commerce, and Gull Outreach — full-stack web development, Amazon PPC & account management, and B2B lead generation, led by founder Abdullah Gull." />
+<meta name="keywords" content="Gull Group, Abdullah Gull, Amazon PPC agency, Amazon account management, Amazon listing optimization, Amazon storefront design, web development agency, Shopify development, WooCommerce development, landing page design, B2B lead generation, cold email outreach, LinkedIn prospecting, CRM automation" />
+<meta name="author" content="Abdullah Gull" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#050505" />
+<link rel="canonical" href="https://gull-of-group.github.io/" />
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Gull Group" />
+<meta property="og:title" content="Gull Group | Amazon Commerce, Web Development & B2B Outreach Agency" />
+<meta property="og:description" content="One brand, three growth engines: Gull Web, Gull Commerce, and Gull Outreach. Web development, Amazon marketplace management, and B2B lead generation under one roof." />
+<meta property="og:url" content="https://gull-of-group.github.io/" />
+<meta property="og:image" content="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gull Group | Amazon Commerce, Web Development & B2B Outreach Agency" />
+<meta name="twitter:description" content="One brand, three growth engines: Gull Web, Gull Commerce, and Gull Outreach — built and led by founder Abdullah Gull." />
+<meta name="twitter:image" content="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" />
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gull Group",
+  "url": "https://gull-of-group.github.io/",
+  "logo": "https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Abdullah Gull",
+    "jobTitle": "Founder"
+  },
+  "description": "Gull Group is the umbrella for Gull Web, Gull Commerce, and Gull Outreach — web development, Amazon marketplace management, and B2B lead generation.",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "description": "Full-stack websites, e-commerce stores and landing pages." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Amazon Marketplace Management", "description": "Amazon listing optimization, PPC advertising and storefront design." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B Outreach", "description": "Cold email, LinkedIn prospecting and lead generation." } }
+  ]
+}
+</script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,6 +74,11 @@
             muted: '#8E8E93',
             white: '#FFFFFF',
             black: '#000000'
+          },
+          gold: {
+            DEFAULT: '#C7CBD1',
+            soft: '#E9EBEE',
+            dim: 'rgba(199,203,209,0.12)'
           }
         },
         fontFamily: {
@@ -136,6 +182,116 @@
     background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0);
     background-size: 24px 24px;
   }
+
+  /* ===== Silver accent utilities ===== */
+  .text-gold { color: #C7CBD1; }
+  .border-gold { border-color: rgba(199,203,209,0.5); }
+  .gold-glow-text {
+    text-shadow: 0 0 24px rgba(199,203,209,0.35);
+  }
+
+  /* ===== Hub & Spoke Ecosystem Diagram (hero signature element) ===== */
+  .hub-diagram {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hub-core {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 28px;
+    background: radial-gradient(circle at 50% 20%, #17171B 0%, #0A0A0C 75%);
+    border: 1px solid rgba(199,203,209,0.35);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02), 0 30px 60px -20px rgba(199,203,209,0.18), inset 0 1px 0 rgba(255,255,255,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: hub-float 6s ease-in-out infinite;
+  }
+  @keyframes hub-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hub-node {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #0D0D0F;
+    border: 1px solid #26262B;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+    white-space: nowrap;
+    box-shadow: 0 10px 25px -10px rgba(0,0,0,0.6);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .hub-node:hover {
+    transform: translateY(-3px);
+    border-color: rgba(199,203,209,0.5);
+  }
+  .hub-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hub-connector {
+    stroke-dasharray: 5 6;
+    stroke-width: 1.75;
+    fill: none;
+    opacity: 0.7;
+    stroke-linecap: round;
+    animation: hub-flow 2.4s linear infinite;
+  }
+  @keyframes hub-flow {
+    to { stroke-dashoffset: -33; }
+  }
+  .hub-endpoint {
+    filter: drop-shadow(0 0 6px currentColor);
+  }
+
+  /* ===== Founder Section ===== */
+  .founder-photo-frame {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(199,203,209,0.35);
+    box-shadow: 0 30px 70px -25px rgba(199,203,209,0.25);
+  }
+  .founder-check {
+    background: rgba(199,203,209,0.12);
+    color: #C7CBD1;
+    border: 1px solid rgba(199,203,209,0.4);
+  }
+
+  /* ===== Trusted-brands marquee ===== */
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee-scroll 22s linear infinite;
+  }
+  .marquee-viewport:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-viewport {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 </style>
 </head>
 <body class="bg-bw-bg text-bw-text selection:bg-white selection:text-black">
@@ -156,6 +312,7 @@
       <a href="#top" class="px-4 py-1.5 text-bw-text hover:text-white hover:bg-bw-hover rounded-full transition-colors">Home</a>
       <a href="#services" class="px-4 py-1.5 text-bw-muted hover:text-white hover:bg-bw-hover rounded-full transition-colors">Services</a>
       <a href="#about" class="px-4 py-1.5 text-bw-muted hover:text-white hover:bg-bw-hover rounded-full transition-colors">About</a>
+      <a href="#founder" class="px-4 py-1.5 text-bw-muted hover:text-white hover:bg-bw-hover rounded-full transition-colors">Founder</a>
       <a href="#faq" class="px-4 py-1.5 text-bw-muted hover:text-white hover:bg-bw-hover rounded-full transition-colors">FAQ</a>
       <a href="#contact" class="px-4 py-1.5 text-bw-muted hover:text-white hover:bg-bw-hover rounded-full transition-colors">Contact</a>
     </nav>
@@ -205,13 +362,105 @@
 
       <!-- Main Headline matching image style -->
       <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
-        Gull Of <span class="text-bw-muted">Group</span>
+        Gull Of <span class="text-gold gold-glow-text">Group</span>
       </h1>
 
       <!-- Subtitle -->
       <p class="mt-6 text-base sm:text-lg text-bw-muted max-w-2xl mx-auto leading-relaxed font-normal">
         One brand, multiple services. We help businesses grow through web development, Amazon marketplace management, and strategic B2B outreach.
       </p>
+
+      <!-- HUB & SPOKE ECOSYSTEM DIAGRAM — signature element (JS-positioned connectors) -->
+      <div class="hub-diagram mt-16 sm:mt-20 relative" id="hubDiagram" role="img" aria-label="Diagram showing Gull Group at the center, connected to Gull Web, Gull Commerce, and Gull Outreach">
+        <div class="relative flex justify-center mb-6" style="z-index:2;">
+          <a href="https://gull-of-group.github.io/gull-web-tech/" id="node-web" class="hub-node">
+            <span class="hub-dot bg-sky-400"></span> Gull Web
+          </a>
+        </div>
+
+        <svg id="hubSvg" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:1;"></svg>
+
+        <div class="hub-core" id="hubCore" style="position:relative; z-index:2;">
+          <span class="font-display text-2xl font-black tracking-tight text-white">GULL</span>
+          <span class="text-gold text-xs font-bold uppercase tracking-[0.25em] mt-1">Group</span>
+          <span class="text-bw-muted text-[10px] uppercase tracking-widest mt-2">Web · Commerce · Outreach</span>
+        </div>
+
+        <div class="relative flex flex-wrap justify-center gap-4 sm:gap-10 mt-6" style="z-index:2;">
+          <a href="#gull-commerce" id="node-commerce" class="hub-node">
+            <span class="hub-dot bg-gold"></span> Gull Commerce
+          </a>
+          <a href="https://gull-of-group.github.io/Gull-B2B-outreach/" id="node-outreach" class="hub-node">
+            <span class="hub-dot bg-emerald-400"></span> Gull Outreach
+          </a>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          function drawHubDiagram() {
+            var container = document.getElementById('hubDiagram');
+            var svg = document.getElementById('hubSvg');
+            var hub = document.getElementById('hubCore');
+            if (!container || !svg || !hub) return;
+
+            var cRect = container.getBoundingClientRect();
+            if (cRect.width === 0) return;
+            svg.setAttribute('viewBox', '0 0 ' + cRect.width + ' ' + cRect.height);
+            svg.innerHTML = '';
+
+            var hubRect = hub.getBoundingClientRect();
+            var hubTop = { x: hubRect.left + hubRect.width / 2 - cRect.left, y: hubRect.top - cRect.top };
+            var hubBottom = { x: hubRect.left + hubRect.width / 2 - cRect.left, y: hubRect.bottom - cRect.top };
+
+            var links = [
+              { id: 'node-web', color: '#7DD3FC', from: hubTop, side: 'top' },
+              { id: 'node-commerce', color: '#C7CBD1', from: hubBottom, side: 'bottom' },
+              { id: 'node-outreach', color: '#6EE7B7', from: hubBottom, side: 'bottom' }
+            ];
+
+            links.forEach(function (link) {
+              var node = document.getElementById(link.id);
+              if (!node) return;
+              var nRect = node.getBoundingClientRect();
+              var target = {
+                x: nRect.left + nRect.width / 2 - cRect.left,
+                y: link.side === 'top' ? (nRect.bottom - cRect.top) : (nRect.top - cRect.top)
+              };
+              var midY = (link.from.y + target.y) / 2;
+              var d = 'M ' + link.from.x + ' ' + link.from.y +
+                ' C ' + link.from.x + ' ' + midY + ', ' + target.x + ' ' + midY + ', ' + target.x + ' ' + target.y;
+
+              var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+              path.setAttribute('d', d);
+              path.setAttribute('class', 'hub-connector');
+              path.setAttribute('stroke', link.color);
+              svg.appendChild(path);
+
+              var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              circle.setAttribute('cx', target.x);
+              circle.setAttribute('cy', target.y);
+              circle.setAttribute('r', 4);
+              circle.setAttribute('fill', link.color);
+              circle.setAttribute('class', 'hub-endpoint');
+              svg.appendChild(circle);
+
+              var hubDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              hubDot.setAttribute('cx', link.from.x);
+              hubDot.setAttribute('cy', link.from.y);
+              hubDot.setAttribute('r', 3);
+              hubDot.setAttribute('fill', link.color);
+              hubDot.setAttribute('class', 'hub-endpoint');
+              svg.appendChild(hubDot);
+            });
+          }
+
+          window.addEventListener('load', drawHubDiagram);
+          window.addEventListener('resize', drawHubDiagram);
+          document.addEventListener('DOMContentLoaded', drawHubDiagram);
+          setTimeout(drawHubDiagram, 300);
+        })();
+      </script>
 
       <!-- 3-CARD GRID DESIGN (Exact layout from reference image) -->
       <div id="services" class="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left">
@@ -244,14 +493,14 @@
         </div>
 
         <!-- CARD 2: Amazon Services (Gull Commerce - Highlighted Center) -->
-        <div class="bw-card rounded-3xl p-8 flex flex-col justify-between group relative overflow-hidden border-white/30 bg-gradient-to-b from-[#141418] to-[#0A0A0C] shadow-2xl">
-          <div class="absolute top-4 right-4 bg-white text-black text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-widest">
+        <div class="bw-card rounded-3xl p-8 flex flex-col justify-between group relative overflow-hidden border-gold bg-gradient-to-b from-[#141418] to-[#0A0A0C] shadow-2xl">
+          <div class="absolute top-4 right-4 bg-gold text-black text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-widest">
             Core Specialty
           </div>
 
           <div>
             <!-- Icon: Cart / Amazon -->
-            <div class="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center mb-6 text-black shadow-lg">
+            <div class="w-14 h-14 rounded-2xl bg-gold text-black flex items-center justify-center mb-6 text-black shadow-lg">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
               </svg>
@@ -269,7 +518,7 @@
             </ul>
           </div>
 
-          <a href="#gull-commerce" class="w-full text-center btn-white py-3 px-6 rounded-full text-xs font-bold uppercase tracking-wider block">
+          <a href="#gull-commerce" class="w-full text-center bg-gold hover:bg-gold-soft text-black transition-colors py-3 px-6 rounded-full text-xs font-bold uppercase tracking-wider block">
             Explore Gull Commerce
           </a>
         </div>
@@ -303,15 +552,29 @@
 
       </div>
 
-      <!-- TRUSTED BRANDS BANNER (Exact layout from reference image) -->
+      <!-- TRUSTED BRANDS BANNER — animated marquee -->
       <div class="mt-20 pt-10 border-t border-bw-border">
         <p class="text-xs font-semibold uppercase tracking-widest text-bw-muted mb-8">Trusted by growing brands worldwide</p>
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
-          <span class="font-display text-xl font-bold tracking-widest text-white">STUDIO</span>
-          <span class="font-display text-xl font-black tracking-wider text-white">NOVA</span>
-          <span class="font-display text-xl font-bold tracking-widest text-white">LUMINA</span>
-          <span class="font-display text-xl font-black tracking-tight text-white">PULSE</span>
-          <span class="font-display text-xl font-bold tracking-widest text-white">VERTICE</span>
+        <div class="marquee-viewport overflow-hidden">
+          <div class="marquee-track opacity-60 grayscale hover:grayscale-0 transition-all">
+            <span class="font-display text-xl font-bold tracking-widest text-white">STUDIO</span>
+            <span class="font-display text-xl font-black tracking-wider text-white">NOVA</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">LUMINA</span>
+            <span class="font-display text-xl font-black tracking-tight text-white">PULSE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">VERTICE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">ORBIT</span>
+            <span class="font-display text-xl font-black tracking-wider text-white">HALCYON</span>
+            <span class="font-display text-xl font-bold tracking-tight text-white">FORGE&nbsp;CO.</span>
+            <!-- duplicate set for seamless loop -->
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">STUDIO</span>
+            <span class="font-display text-xl font-black tracking-wider text-white" aria-hidden="true">NOVA</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">LUMINA</span>
+            <span class="font-display text-xl font-black tracking-tight text-white" aria-hidden="true">PULSE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">VERTICE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">ORBIT</span>
+            <span class="font-display text-xl font-black tracking-wider text-white" aria-hidden="true">HALCYON</span>
+            <span class="font-display text-xl font-bold tracking-tight text-white" aria-hidden="true">FORGE&nbsp;CO.</span>
+          </div>
         </div>
       </div>
 
@@ -368,14 +631,14 @@
         </div>
 
         <!-- Gull Commerce Detail Box -->
-        <div id="gull-commerce" class="bw-card rounded-3xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-white/40 bg-gradient-to-r from-bw-card to-[#121216] scroll-mt-28">
+        <div id="gull-commerce" class="bw-card rounded-3xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-gold bg-gradient-to-r from-bw-card to-[#121216] scroll-mt-28">
           <div class="lg:col-span-5">
             <span class="text-xs font-bold uppercase tracking-widest text-bw-muted">02 / Gull Commerce</span>
             <h3 class="font-display text-3xl font-bold text-white mt-2 mb-4">Amazon & Marketplace Growth</h3>
             <p class="text-sm text-bw-muted leading-relaxed mb-6">
               Complete Amazon account management, PPC advertising strategies, product launch execution, and storefront optimization.
             </p>
-            <a href="#contact" class="btn-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+            <a href="#contact" class="bg-gold hover:bg-gold-soft text-black transition-colors px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
               Scale Amazon Store &rarr;
             </a>
           </div>
@@ -437,6 +700,79 @@
   </section>
 
   <!-- ============================================================
+       FOUNDER SECTION — Abdullah Gull
+       ============================================================ -->
+  <section id="founder" class="py-24 border-t border-bw-border bg-bw-bg relative overflow-hidden">
+    <div class="hero-glow" style="top:-60px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bw-card border-gold rounded-3xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Founder Photo -->
+        <div class="lg:col-span-5">
+          <div class="founder-photo-frame">
+            <img src="https://gull-of-group.github.io/abdullah-gull-photo.jpg"
+                 alt="Abdullah Gull, Founder of Gull Group"
+                 class="w-full h-full object-cover aspect-[4/5]" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Founder Content -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-gold">Founder</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 mb-6">Abdullah Gull</h2>
+
+          <p class="text-sm sm:text-base text-bw-muted leading-relaxed mb-4">
+            Abdullah Gull founded Gull Group to solve a problem most agencies never do: growth engines that don't talk to each other. Instead of hiring separate vendors for a website, an Amazon store, and a lead pipeline, brands get all three under one roof, built by teams who actually coordinate.
+          </p>
+          <p class="text-sm sm:text-base text-bw-muted leading-relaxed mb-8">
+            Every engagement runs on the same principle: ship fast, measure everything, and never let a service exist in isolation. That's why Gull Web, Gull Commerce, and Gull Outreach share strategy, data, and reporting — so a new website, an optimized Amazon listing, and an outbound campaign are all pulling in the same direction.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex items-start gap-3">
+              <span class="founder-check w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <h4 class="font-bold text-white text-sm mb-1">Multi-Brand Leadership</h4>
+                <p class="text-xs text-bw-muted leading-relaxed">Built and runs three specialized service brands under one strategic roof.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="founder-check w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <h4 class="font-bold text-white text-sm mb-1">Amazon & Web Expertise</h4>
+                <p class="text-xs text-bw-muted leading-relaxed">Hands-on experience across marketplace management and modern web engineering.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="founder-check w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <h4 class="font-bold text-white text-sm mb-1">Data-Led Strategy</h4>
+                <p class="text-xs text-bw-muted leading-relaxed">Decisions are driven by performance data, not guesswork or trends.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="founder-check w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <h4 class="font-bold text-white text-sm mb-1">Client-First Philosophy</h4>
+                <p class="text-xs text-bw-muted leading-relaxed">Gull Group grows when clients grow — never the other way around.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        FAQ SECTION
        ============================================================ -->
   <section id="faq" class="py-20 border-t border-bw-border bg-bw-bg">
@@ -449,36 +785,91 @@
       <div class="space-y-4">
         <details class="bw-card rounded-2xl p-6 group cursor-pointer">
           <summary class="font-bold text-white flex justify-between items-center list-none">
-            Can I hire just one Gull service or do I need all three?
-            <span class="text-bw-muted group-open:rotate-45 transition-transform text-xl">+</span>
+            What does Gull Web actually build for clients?
+            <span class="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
           </summary>
           <p class="text-sm text-bw-muted mt-4 leading-relaxed">
-            You can engage any single brand independently (e.g. Gull Commerce for Amazon management). As your business grows, you can seamlessly add Web or Outreach services to build an integrated growth ecosystem.
+            Gull Web designs and engineers custom websites, Shopify and WooCommerce stores, landing pages, and web apps — built for speed, mobile performance, and conversion, not just looks.
           </p>
         </details>
 
         <details class="bw-card rounded-2xl p-6 group cursor-pointer">
           <summary class="font-bold text-white flex justify-between items-center list-none">
-            How does Gull Commerce handle Amazon PPC advertising?
-            <span class="text-bw-muted group-open:rotate-45 transition-transform text-xl">+</span>
+            What does Gull Commerce handle on Amazon?
+            <span class="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
           </summary>
           <p class="text-sm text-bw-muted mt-4 leading-relaxed">
-            We perform deep search frequency rank analysis and construct structured campaign architectures (Sponsored Products, Brands, and Display) with continuous bid and negative keyword optimizations.
+            Gull Commerce manages the full Amazon lifecycle: listing optimization and SEO, Sponsored Products/Brands/Display PPC campaigns, A+ content and storefront design, and day-to-day account and inventory health management.
           </p>
         </details>
 
         <details class="bw-card rounded-2xl p-6 group cursor-pointer">
           <summary class="font-bold text-white flex justify-between items-center list-none">
-            How fast can a new website or Amazon project be launched?
-            <span class="text-bw-muted group-open:rotate-45 transition-transform text-xl">+</span>
+            What kind of leads does Gull Outreach generate?
+            <span class="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
           </summary>
           <p class="text-sm text-bw-muted mt-4 leading-relaxed">
-            Typical website projects take 2 to 4 weeks depending on complexity. Amazon listing optimizations and PPC take 1 to 2 weeks for full initial rollout.
+            Gull Outreach builds B2B pipeline through LinkedIn prospecting, verified cold email sequences, and CRM-integrated appointment setting — so qualified conversations land directly on your calendar.
+          </p>
+        </details>
+
+        <details class="bw-card rounded-2xl p-6 group cursor-pointer">
+          <summary class="font-bold text-white flex justify-between items-center list-none">
+            Can I hire just one Gull service, or do I need all three?
+            <span class="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-sm text-bw-muted mt-4 leading-relaxed">
+            You can engage any single brand independently — for example, Gull Commerce for Amazon management alone. As your business grows, you can add Web or Outreach at any time to build a fully integrated growth stack.
+          </p>
+        </details>
+
+        <details class="bw-card rounded-2xl p-6 group cursor-pointer">
+          <summary class="font-bold text-white flex justify-between items-center list-none">
+            What's the process from first call to launch?
+            <span class="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
+          </summary>
+          <p class="text-sm text-bw-muted mt-4 leading-relaxed">
+            We start with a free audit of your website, Amazon store, or outreach setup, then propose a scoped plan. Website builds typically take 2–4 weeks, while Amazon listing and PPC rollouts launch within 1–2 weeks, with regular reporting throughout.
           </p>
         </details>
       </div>
     </div>
   </section>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Gull Web actually build for clients?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gull Web designs and engineers custom websites, Shopify and WooCommerce stores, landing pages, and web apps built for speed, mobile performance, and conversion." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Gull Commerce handle on Amazon?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gull Commerce manages listing optimization and SEO, Sponsored Products/Brands/Display PPC campaigns, A+ content and storefront design, and ongoing account and inventory health management." }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of leads does Gull Outreach generate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gull Outreach builds B2B pipeline through LinkedIn prospecting, verified cold email sequences, and CRM-integrated appointment setting." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I hire just one Gull service, or do I need all three?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, each brand — Gull Web, Gull Commerce, and Gull Outreach — can be engaged independently, and services can be added later to build an integrated growth stack." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the process from first call to launch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Engagements start with a free audit, followed by a scoped plan. Website builds take 2 to 4 weeks; Amazon listing and PPC rollouts launch within 1 to 2 weeks." }
+      }
+    ]
+  }
+  </script>
 
   <!-- ============================================================
        CONTACT & AUDIT REQUEST FORM
@@ -487,9 +878,9 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bw-card rounded-3xl p-8 sm:p-12 border-white/20">
         <div class="text-center max-w-xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-widest text-bw-muted">Get Started Today</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Request Your Free Audit</h2>
-          <p class="text-sm text-bw-muted mt-2">Let our specialists analyze your website, Amazon store, or outreach setup.</p>
+          <span class="text-xs font-bold uppercase tracking-widest text-gold">Let's Build Something</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Get In Touch</h2>
+          <p class="text-sm text-bw-muted mt-2">One message, three ways to grow. Tell Abdullah and the team what you're working on — website, Amazon store, or outreach — and get a clear, honest plan back.</p>
         </div>
 
         <form onsubmit="event.preventDefault(); alert('Thank you! Your audit request has been submitted.');" class="space-y-4">
@@ -504,14 +895,25 @@
             </div>
           </div>
 
-          <div>
-            <label class="block text-xs font-medium text-bw-muted uppercase tracking-wider mb-2">Primary Interest</label>
-            <select class="w-full bg-black/60 border border-bw-border rounded-xl px-4 py-3 text-sm text-bw-text focus:outline-none focus:border-white transition-colors">
-              <option>Gull Commerce — Amazon & Marketplace Audit</option>
-              <option>Gull Web — Website & App Development</option>
-              <option>Gull Outreach — B2B Lead Generation</option>
-              <option>All Three Services (Full Growth Stack)</option>
-            </select>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-bw-muted uppercase tracking-wider mb-2">Primary Interest</label>
+              <select class="w-full bg-black/60 border border-bw-border rounded-xl px-4 py-3 text-sm text-bw-text focus:outline-none focus:border-white transition-colors">
+                <option>Gull Commerce — Amazon & Marketplace Audit</option>
+                <option>Gull Web — Website & App Development</option>
+                <option>Gull Outreach — B2B Lead Generation</option>
+                <option>All Three Services (Full Growth Stack)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-bw-muted uppercase tracking-wider mb-2">Estimated Monthly Budget</label>
+              <select class="w-full bg-black/60 border border-bw-border rounded-xl px-4 py-3 text-sm text-bw-text focus:outline-none focus:border-white transition-colors">
+                <option>Under $1,000</option>
+                <option>$1,000 – $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000+</option>
+              </select>
+            </div>
           </div>
 
           <div>
@@ -519,9 +921,15 @@
             <input type="url" placeholder="https://yourbrand.com" class="w-full bg-black/60 border border-bw-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white transition-colors" />
           </div>
 
+          <div>
+            <label class="block text-xs font-medium text-bw-muted uppercase tracking-wider mb-2">What are you trying to fix or grow? (optional)</label>
+            <textarea rows="3" placeholder="e.g. low Amazon conversion rate, slow website, no inbound leads..." class="w-full bg-black/60 border border-bw-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white transition-colors"></textarea>
+          </div>
+
           <button type="submit" class="w-full btn-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest mt-4">
-            Submit Free Audit Request
+            Send Message &amp; Get Free Audit
           </button>
+          <p class="text-center text-[11px] text-bw-muted">No spam, no sales pressure — just an honest look at what's working and what isn't.</p>
         </form>
       </div>
     </div>
