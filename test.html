@@ -370,46 +370,120 @@
 
   <!-- JAVASCRIPT FOR INTERACTION -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', () => {
+  // ===== DESKTOP MEGA MENU LOGIC =====
+  const navTriggers = document.querySelectorAll('.nav-trigger');
+  const navItems = document.querySelectorAll('.nav-item');
+  const megaContainer = document.getElementById('megaContainer');
+  const megaScrim = document.getElementById('megaScrim');
+  const megaPanels = document.querySelectorAll('.mega-content');
 
-    // Mega Dropdown Interactive Logic
-    const solutionsBtn = document.getElementById('solutionsBtn');
-    const megaDropdown = document.getElementById('megaDropdown');
-    const solutionsChevron = document.getElementById('solutionsChevron');
+  let activePanelId = null;
 
-    solutionsBtn.addEventListener('click', (e) => {
+  function closeMegaMenu() {
+    megaContainer.classList.remove('open');
+    megaScrim.classList.remove('show');
+    navItems.forEach(item => item.classList.remove('open'));
+    
+    // Inline style se hide karna taake Tailwind CDN specificity issue na ho
+    megaPanels.forEach(panel => {
+      panel.style.display = 'none';
+    });
+    activePanelId = null;
+  }
+
+  function openMegaMenu(panelId, triggerBtn) {
+    const targetPanel = document.getElementById(`panel-${panelId}`);
+    if (!targetPanel) return;
+
+    // Pehle baaqi sab panels hide karein
+    megaPanels.forEach(panel => {
+      panel.style.display = 'none';
+    });
+    navItems.forEach(item => item.classList.remove('open'));
+
+    // Target panel ko direct display: grid dein
+    targetPanel.style.display = 'grid';
+    triggerBtn.closest('.nav-item').classList.add('open');
+    
+    megaContainer.classList.add('open');
+    megaScrim.classList.add('show');
+    activePanelId = panelId;
+  }
+
+  // Desktop triggers par click / hover events
+  navTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isHidden = megaDropdown.classList.contains('hidden');
+      const panelId = btn.getAttribute('data-panel');
       
-      if (isHidden) {
-        megaDropdown.classList.remove('hidden');
-        setTimeout(() => {
-          megaDropdown.classList.remove('opacity-0', '-translate-y-2');
-          megaDropdown.classList.add('opacity-100', 'translate-y-0');
-        }, 10);
-        solutionsChevron.classList.add('rotate-180');
+      if (activePanelId === panelId) {
+        closeMegaMenu();
       } else {
-        megaDropdown.classList.add('opacity-0', '-translate-y-2');
-        megaDropdown.classList.remove('opacity-100', 'translate-y-0');
-        setTimeout(() => {
-          megaDropdown.classList.add('hidden');
-        }, 200);
-        solutionsChevron.classList.remove('rotate-180');
+        openMegaMenu(panelId, btn);
       }
     });
+  });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!megaDropdown.contains(e.target) && !solutionsBtn.contains(e.target)) {
-        megaDropdown.classList.add('opacity-0', '-translate-y-2');
-        megaDropdown.classList.remove('opacity-100', 'translate-y-0');
-        setTimeout(() => {
-          megaDropdown.classList.add('hidden');
-        }, 200);
-        solutionsChevron.classList.remove('rotate-180');
+  // Scrim / Background par click karne se menu close hoga
+  if (megaScrim) {
+    megaScrim.addEventListener('click', closeMegaMenu);
+  }
+
+  // Header ke bahar click hone par close
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('header')) {
+      closeMegaMenu();
+    }
+  });
+
+
+  // ===== MOBILE DRAWER LOGIC =====
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const closeMobileBtn = document.getElementById('closeMobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+
+  function openMobileMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    document.body.style.overflow = 'hidden'; // Background scroll lock
+  }
+
+  function closeMobileDrawer() {
+    mobileMenu.classList.add('translate-x-full');
+    mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+  if (closeMobileBtn) closeMobileBtn.addEventListener('click', closeMobileDrawer);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileDrawer);
+
+
+  // ===== MOBILE ACCORDION TOGGLE =====
+  const mobileAccBtns = document.querySelectorAll('.mobile-acc-btn');
+
+  mobileAccBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.classList.contains('open');
+
+      // Dusre accordion panels ko close karne ke liye (Optional single-open behavior)
+      mobileAccBtns.forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.classList.remove('open');
+        }
+      });
+
+      // Target accordion toggle
+      if (isOpen) {
+        btn.classList.remove('open');
+      } else {
+        btn.classList.add('open');
       }
     });
+  });
+});
   </script>
 </body>
 </html>
