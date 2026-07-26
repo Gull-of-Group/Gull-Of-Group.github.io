@@ -1,8 +1,289 @@
-<!-- Custom Customized Footer -->
-<footer class="w-full bg-[#070a0d] border-t border-emerald-500/10 text-slate-300 relative overflow-hidden pt-16 pb-8">
-  <!-- Neon Green Background Glow -->
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-emerald-500/5 blur-[120px] pointer-events-none"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Gull Of Group Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
+  <link rel="apple-touch-icon" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
 
+  <title>Gull Of Group - Enterprise AI Solutions</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 300:'#c4b0f5', 400:'#a480ef', 500:'#8b3fe0', 600:'#7226c9', 700:'#5a1aa3', 800:'#3e1273', 900:'#240a4a' },
+            gold:  { 300:'#f3d9a4', 400:'#e8c079', 500:'#dba54e', 600:'#bb8635' },
+            ink:   { 900:'#050208', 800:'#0a0512', 700:'#0f0a1a', 600:'#170f26', 500:'#221833' },
+            brandDark:   '#050208',
+            brandViolet: '#8b3fe0',
+            brandGold:   '#dba54e',
+            borderViolet:'rgba(139,63,224,0.18)',
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          heading: ['Plus Jakarta Sans', 'sans-serif'],
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --glow-core: rgba(139,63,224,0.55);
+      --glow-mid: rgba(90,26,163,0.28);
+    }
+    html{scroll-behavior:smooth;}
+    body{ background:#050208; }
+
+    .bg-luxury-glow{
+      background:
+        radial-gradient(60% 55% at 50% 38%, var(--glow-core) 0%, var(--glow-mid) 38%, transparent 70%),
+        radial-gradient(90% 60% at 85% 0%, rgba(219,165,78,0.10) 0%, transparent 55%),
+        #050208;
+    }
+    .bg-grain{
+      background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+
+    /* ===== Header / Mega menu ===== */
+    header{ position:relative; z-index:70; }
+    .nav-trigger{ position:relative; }
+    .nav-trigger .chevron{ transition: transform .2s ease; }
+    .nav-item.open .nav-trigger .chevron{ transform: rotate(180deg); }
+    .nav-item.open .nav-trigger{ color:#e8c079; }
+    .nav-trigger::after{
+      content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+      background:linear-gradient(90deg,#dba54e,#8b3fe0); transform:scaleX(0); transform-origin:left;
+      transition:transform .25s ease;
+    }
+    .nav-item.open .nav-trigger::after{ transform:scaleX(1); }
+
+    #megaScrim{
+      position:fixed; inset:0; top:0; z-index:60; background:rgba(3,1,8,.6); backdrop-filter:blur(3px);
+      opacity:0; pointer-events:none; transition:opacity .25s ease;
+    }
+    #megaScrim.show{ opacity:1; pointer-events:auto; }
+
+    #megaContainer{
+      position:absolute; top:100%; left:0; width:100%;
+      background:rgba(10,5,18,0.98);
+      border-top:1px solid rgba(139,63,224,0.25);
+      box-shadow:0 40px 80px -30px rgba(0,0,0,.85);
+      opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-10px);
+      transition:opacity .22s ease, transform .22s ease, visibility .22s;
+      z-index:65; max-height:82vh; overflow-y:auto;
+    }
+    #megaContainer.open{ opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
+    .mega-col-title{
+      font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+      color:#8a7aa8; margin-bottom:.6rem;
+    }
+    .mega-row{
+      display:flex; align-items:center; gap:.55rem;
+      padding:.4rem .5rem; border-radius:.5rem; font-size:12.5px; font-weight:600;
+      color:#d8cfe8; transition:background .15s ease, color .15s ease, transform .15s ease;
+    }
+    .mega-row:hover{ background:rgba(139,63,224,0.14); color:#f3d9a4; transform:translateX(3px); }
+    .mega-row .dot{ width:4px; height:4px; border-radius:99px; background:#8b3fe0; flex-shrink:0; }
+
+    .mega-more{
+      display:inline-flex; align-items:center; gap:.3rem; font-size:11px; font-weight:800;
+      color:#a480ef; letter-spacing:.03em; margin-top:.4rem; padding:.3rem .5rem;
+    }
+    .mega-more:hover{ color:#e8c079; }
+
+    .mega-cta{
+      border-radius:1rem; padding:1.25rem;
+      background:linear-gradient(155deg,#5a1aa3,#8b3fe0 60%, #bb8635);
+      display:flex; flex-direction:column; justify-content:space-between; height:100%;
+      box-shadow:0 20px 40px -18px rgba(139,63,224,.6);
+    }
+
+    /* ===== Mobile Drawer ===== */
+    #mobileOverlay{ transition:opacity .25s ease; }
+    #mobileMenu{ transition:transform .35s cubic-bezier(.4,0,.2,1); }
+    .mobile-acc-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s ease; }
+    .mobile-acc-panel > div{ overflow:hidden; }
+    .mobile-acc-btn.open + .mobile-acc-panel{ grid-template-rows:1fr; }
+    .mobile-acc-btn .chevron{ transition:transform .25s ease; }
+    .mobile-acc-btn.open .chevron{ transform:rotate(180deg); }
+    .mobile-acc-btn.open{ color:#e8c079; }
+    .mobile-icon{
+      width:30px; height:30px; border-radius:9px; flex-shrink:0;
+      background:rgba(139,63,224,.15); color:#c4b0f5;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+    }
+    @media (max-width:1023px){
+      .desktop-nav, #megaContainer, #megaScrim{ display:none !important; }
+    }
+
+    /* ===== CUSTOM NEON GREEN FOOTER STYLING (Image 1 Structure + Image 2 Content + Image 3 Colors) ===== */
+    footer {
+      background-color: #070a0d;
+      color: #94a3b8;
+      position: relative;
+      font-family: 'Inter', sans-serif;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 80rem;
+      height: 16rem;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    footer h4 span {
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    }
+
+    footer ul li a {
+      transition: all 0.2s ease-in-out;
+      color: #94a3b8;
+    }
+
+    footer ul li a:hover {
+      color: #10b981;
+      transform: translateX(4px);
+    }
+
+    footer .fa-brands {
+      transition: transform 0.2s ease;
+    }
+
+    footer a:hover .fa-brands {
+      transform: scale(1.1);
+    }
+
+    footer .inline-flex {
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    footer .inline-flex:hover {
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.3);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+  </style>
+</head>
+<body class="text-slate-200 font-sans antialiased overflow-x-hidden bg-luxury-glow bg-grain min-h-screen flex flex-col justify-between">
+
+<div id="megaScrim"></div>
+
+<!-- Header / Navbar -->
+<header class="w-full border-b border-brand-500/15 bg-[#0a0512]/75 backdrop-blur-md sticky top-0">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="https://gull-of-group.github.io/index.html" class="inline-flex items-center shrink-0 group py-1">
+      <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" alt="Gull Of Group" class="h-9 sm:h-11 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(139,63,224,0.35)] group-hover:drop-shadow-[0_0_18px_rgba(219,165,78,0.5)] group-hover:scale-[1.03] transition-all duration-300 ease-out">
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav hidden lg:flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-slate-300">
+      <div class="nav-item">
+        <button data-panel="ai" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          AI Development
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="services" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Services
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="tech" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Technologies
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="industries" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Industries
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <div class="nav-item">
+        <button data-panel="company" class="nav-trigger flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">
+          Company
+          <svg class="chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+      <a href="#" class="px-3 py-2 rounded-lg hover:text-gold-400 hover:bg-brand-500/10 transition-colors">Case Studies</a>
+    </nav>
+
+    <a href="#" class="hidden lg:inline-flex px-5 py-2.5 rounded-lg bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-400 hover:to-brand-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-0.5 shrink-0">
+      Book A Strategy Session
+    </a>
+
+    <button id="hamburgerBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-brand-500/25 text-slate-200" aria-label="Open menu">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+
+  <!-- Mega Container Panels -->
+  <div id="megaContainer">
+    <div class="max-w-7xl mx-auto px-6 py-9">
+      <div id="panel-ai" class="mega-content grid grid-cols-4 gap-8" style="display:none">
+        <div class="col-span-1">
+          <div class="mega-col-title">AI Services</div>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Development Services</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Voice and Chatbots</a>
+          <a href="#" class="mega-row"><span class="dot"></span>AI Agents</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Computer Vision</a>
+          <a href="#" class="mega-row"><span class="dot"></span>Generative AI</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay + Drawer -->
+<div id="mobileOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] opacity-0 pointer-events-none lg:hidden"></div>
+
+<aside id="mobileMenu" class="fixed top-0 right-0 h-full w-[88%] max-w-sm bg-[#0a0512] border-l border-brand-500/20 z-[90] shadow-2xl translate-x-full lg:hidden flex flex-col">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-brand-500/15">
+    <a href="https://gull-of-group.github.io/index.html" class="inline-flex items-center shrink-0">
+      <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" alt="Gull Of Group" class="h-8 w-auto object-contain">
+    </a>
+    <button id="closeMobileBtn" class="w-9 h-9 flex items-center justify-center rounded-lg border border-brand-500/25 text-slate-300">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT AREA (Placeholder) -->
+<main class="flex-grow py-20 px-6 max-w-7xl mx-auto">
+  <!-- Content area -->
+</main>
+
+<!-- COMBINED CUSTOM FOOTER -->
+<footer class="w-full bg-[#070a0d] border-t border-emerald-500/10 text-slate-300 relative overflow-hidden pt-16 pb-8">
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
       
@@ -84,7 +365,7 @@
         </ul>
       </div>
 
-      <!-- Column 4: SERVICES & ADDRESS (Hybrid from Image 1 & 2) -->
+      <!-- Column 4: ADDRESS (From Image 2) -->
       <div>
         <h4 class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-2 mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ADDRESS
@@ -104,7 +385,7 @@
 
     </div>
 
-    <!-- Bottom Compliance Bar (From Image 1 with Image 3 Colors) -->
+    <!-- Bottom Compliance Bar -->
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
       <div class="flex items-center gap-3">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold text-[11px]">
@@ -120,3 +401,73 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mega menu logic
+    const navTriggers = document.querySelectorAll('.nav-trigger');
+    const navItems = document.querySelectorAll('.nav-item');
+    const megaContainer = document.getElementById('megaContainer');
+    const megaScrim = document.getElementById('megaScrim');
+    const megaPanels = document.querySelectorAll('.mega-content');
+
+    let activePanelId = null;
+
+    function closeMegaMenu() {
+      if(megaContainer) megaContainer.classList.remove('open');
+      if(megaScrim) megaScrim.classList.remove('show');
+      navItems.forEach(item => item.classList.remove('open'));
+      megaPanels.forEach(panel => { panel.style.display = 'none'; });
+      activePanelId = null;
+    }
+
+    function openMegaMenu(panelId, triggerBtn) {
+      const targetPanel = document.getElementById(`panel-${panelId}`);
+      if (!targetPanel) return;
+
+      megaPanels.forEach(panel => { panel.style.display = 'none'; });
+      navItems.forEach(item => item.classList.remove('open'));
+
+      targetPanel.style.display = 'grid';
+      triggerBtn.closest('.nav-item').classList.add('open');
+      
+      if(megaContainer) megaContainer.classList.add('open');
+      if(megaScrim) megaScrim.classList.add('show');
+      activePanelId = panelId;
+    }
+
+    navTriggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const panelId = btn.getAttribute('data-panel');
+        if (activePanelId === panelId) closeMegaMenu();
+        else openMegaMenu(panelId, btn);
+      });
+    });
+
+    if (megaScrim) megaScrim.addEventListener('click', closeMegaMenu);
+
+    // Mobile Drawer
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const closeMobileBtn = document.getElementById('closeMobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    function openMobileMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function closeMobileDrawer() {
+      mobileMenu.classList.add('translate-x-full');
+      mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+    if (closeMobileBtn) closeMobileBtn.addEventListener('click', closeMobileDrawer);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileDrawer);
+  });
+</script>
+
+</body>
+</html>
