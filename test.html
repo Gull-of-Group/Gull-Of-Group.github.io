@@ -76,9 +76,9 @@
             black: '#000000'
           },
           gold: {
-            DEFAULT: '#D9A44E',
-            soft: '#F1CD8A',
-            dim: 'rgba(217,164,78,0.12)'
+            DEFAULT: '#C7CBD1',
+            soft: '#E9EBEE',
+            dim: 'rgba(199,203,209,0.12)'
           }
         },
         fontFamily: {
@@ -183,11 +183,11 @@
     background-size: 24px 24px;
   }
 
-  /* ===== Gold accent utilities ===== */
-  .text-gold { color: #D9A44E; }
-  .border-gold { border-color: rgba(217,164,78,0.5); }
+  /* ===== Silver accent utilities ===== */
+  .text-gold { color: #C7CBD1; }
+  .border-gold { border-color: rgba(199,203,209,0.5); }
   .gold-glow-text {
-    text-shadow: 0 0 24px rgba(217,164,78,0.35);
+    text-shadow: 0 0 24px rgba(199,203,209,0.35);
   }
 
   /* ===== Hub & Spoke Ecosystem Diagram (hero signature element) ===== */
@@ -204,8 +204,8 @@
     margin: 0 auto;
     border-radius: 28px;
     background: radial-gradient(circle at 50% 20%, #17171B 0%, #0A0A0C 75%);
-    border: 1px solid rgba(217,164,78,0.35);
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.02), 0 30px 60px -20px rgba(217,164,78,0.18), inset 0 1px 0 rgba(255,255,255,0.04);
+    border: 1px solid rgba(199,203,209,0.35);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02), 0 30px 60px -20px rgba(199,203,209,0.18), inset 0 1px 0 rgba(255,255,255,0.04);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,7 +236,7 @@
   }
   .hub-node:hover {
     transform: translateY(-3px);
-    border-color: rgba(217,164,78,0.5);
+    border-color: rgba(199,203,209,0.5);
   }
   .hub-dot {
     width: 8px;
@@ -245,10 +245,18 @@
     flex-shrink: 0;
   }
   .hub-connector {
-    stroke-dasharray: 4 5;
-    stroke-width: 1.5;
+    stroke-dasharray: 5 6;
+    stroke-width: 1.75;
     fill: none;
-    opacity: 0.55;
+    opacity: 0.7;
+    stroke-linecap: round;
+    animation: hub-flow 2.4s linear infinite;
+  }
+  @keyframes hub-flow {
+    to { stroke-dashoffset: -33; }
+  }
+  .hub-endpoint {
+    filter: drop-shadow(0 0 6px currentColor);
   }
 
   /* ===== Founder Section ===== */
@@ -256,13 +264,33 @@
     position: relative;
     border-radius: 28px;
     overflow: hidden;
-    border: 1px solid rgba(217,164,78,0.35);
-    box-shadow: 0 30px 70px -25px rgba(217,164,78,0.25);
+    border: 1px solid rgba(199,203,209,0.35);
+    box-shadow: 0 30px 70px -25px rgba(199,203,209,0.25);
   }
   .founder-check {
-    background: rgba(217,164,78,0.12);
-    color: #D9A44E;
-    border: 1px solid rgba(217,164,78,0.4);
+    background: rgba(199,203,209,0.12);
+    color: #C7CBD1;
+    border: 1px solid rgba(199,203,209,0.4);
+  }
+
+  /* ===== Trusted-brands marquee ===== */
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee-scroll 22s linear infinite;
+  }
+  .marquee-viewport:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-viewport {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 </style>
 </head>
@@ -342,35 +370,97 @@
         One brand, multiple services. We help businesses grow through web development, Amazon marketplace management, and strategic B2B outreach.
       </p>
 
-      <!-- HUB & SPOKE ECOSYSTEM DIAGRAM — signature element -->
-      <div class="hub-diagram mt-16 sm:mt-20" role="img" aria-label="Diagram showing Gull Group at the center, connected to Gull Web, Gull Commerce, and Gull Outreach">
-        <div class="relative flex justify-center mb-6">
-          <a href="https://gull-of-group.github.io/gull-web-tech/" class="hub-node">
+      <!-- HUB & SPOKE ECOSYSTEM DIAGRAM — signature element (JS-positioned connectors) -->
+      <div class="hub-diagram mt-16 sm:mt-20 relative" id="hubDiagram" role="img" aria-label="Diagram showing Gull Group at the center, connected to Gull Web, Gull Commerce, and Gull Outreach">
+        <div class="relative flex justify-center mb-6" style="z-index:2;">
+          <a href="https://gull-of-group.github.io/gull-web-tech/" id="node-web" class="hub-node">
             <span class="hub-dot bg-sky-400"></span> Gull Web
           </a>
         </div>
 
-        <svg class="absolute left-1/2 -translate-x-1/2 top-[52px] w-full h-[190px] pointer-events-none" viewBox="0 0 640 190" preserveAspectRatio="xMidYMid meet">
-          <line x1="320" y1="0" x2="320" y2="55" class="hub-connector" stroke="#7DD3FC" />
-          <line x1="320" y1="135" x2="120" y2="185" class="hub-connector" stroke="#D9A44E" />
-          <line x1="320" y1="135" x2="520" y2="185" class="hub-connector" stroke="#6EE7B7" />
-        </svg>
+        <svg id="hubSvg" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:1;"></svg>
 
-        <div class="hub-core">
+        <div class="hub-core" id="hubCore" style="position:relative; z-index:2;">
           <span class="font-display text-2xl font-black tracking-tight text-white">GULL</span>
           <span class="text-gold text-xs font-bold uppercase tracking-[0.25em] mt-1">Group</span>
           <span class="text-bw-muted text-[10px] uppercase tracking-widest mt-2">Web · Commerce · Outreach</span>
         </div>
 
-        <div class="relative flex flex-wrap justify-center gap-4 sm:gap-10 mt-6">
-          <a href="#gull-commerce" class="hub-node">
+        <div class="relative flex flex-wrap justify-center gap-4 sm:gap-10 mt-6" style="z-index:2;">
+          <a href="#gull-commerce" id="node-commerce" class="hub-node">
             <span class="hub-dot bg-gold"></span> Gull Commerce
           </a>
-          <a href="https://gull-of-group.github.io/Gull-B2B-outreach/" class="hub-node">
+          <a href="https://gull-of-group.github.io/Gull-B2B-outreach/" id="node-outreach" class="hub-node">
             <span class="hub-dot bg-emerald-400"></span> Gull Outreach
           </a>
         </div>
       </div>
+
+      <script>
+        (function () {
+          function drawHubDiagram() {
+            var container = document.getElementById('hubDiagram');
+            var svg = document.getElementById('hubSvg');
+            var hub = document.getElementById('hubCore');
+            if (!container || !svg || !hub) return;
+
+            var cRect = container.getBoundingClientRect();
+            if (cRect.width === 0) return;
+            svg.setAttribute('viewBox', '0 0 ' + cRect.width + ' ' + cRect.height);
+            svg.innerHTML = '';
+
+            var hubRect = hub.getBoundingClientRect();
+            var hubTop = { x: hubRect.left + hubRect.width / 2 - cRect.left, y: hubRect.top - cRect.top };
+            var hubBottom = { x: hubRect.left + hubRect.width / 2 - cRect.left, y: hubRect.bottom - cRect.top };
+
+            var links = [
+              { id: 'node-web', color: '#7DD3FC', from: hubTop, side: 'top' },
+              { id: 'node-commerce', color: '#C7CBD1', from: hubBottom, side: 'bottom' },
+              { id: 'node-outreach', color: '#6EE7B7', from: hubBottom, side: 'bottom' }
+            ];
+
+            links.forEach(function (link) {
+              var node = document.getElementById(link.id);
+              if (!node) return;
+              var nRect = node.getBoundingClientRect();
+              var target = {
+                x: nRect.left + nRect.width / 2 - cRect.left,
+                y: link.side === 'top' ? (nRect.bottom - cRect.top) : (nRect.top - cRect.top)
+              };
+              var midY = (link.from.y + target.y) / 2;
+              var d = 'M ' + link.from.x + ' ' + link.from.y +
+                ' C ' + link.from.x + ' ' + midY + ', ' + target.x + ' ' + midY + ', ' + target.x + ' ' + target.y;
+
+              var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+              path.setAttribute('d', d);
+              path.setAttribute('class', 'hub-connector');
+              path.setAttribute('stroke', link.color);
+              svg.appendChild(path);
+
+              var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              circle.setAttribute('cx', target.x);
+              circle.setAttribute('cy', target.y);
+              circle.setAttribute('r', 4);
+              circle.setAttribute('fill', link.color);
+              circle.setAttribute('class', 'hub-endpoint');
+              svg.appendChild(circle);
+
+              var hubDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              hubDot.setAttribute('cx', link.from.x);
+              hubDot.setAttribute('cy', link.from.y);
+              hubDot.setAttribute('r', 3);
+              hubDot.setAttribute('fill', link.color);
+              hubDot.setAttribute('class', 'hub-endpoint');
+              svg.appendChild(hubDot);
+            });
+          }
+
+          window.addEventListener('load', drawHubDiagram);
+          window.addEventListener('resize', drawHubDiagram);
+          document.addEventListener('DOMContentLoaded', drawHubDiagram);
+          setTimeout(drawHubDiagram, 300);
+        })();
+      </script>
 
       <!-- 3-CARD GRID DESIGN (Exact layout from reference image) -->
       <div id="services" class="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left">
@@ -462,18 +552,29 @@
 
       </div>
 
-      <!-- TRUSTED BRANDS BANNER (Exact layout from reference image) -->
+      <!-- TRUSTED BRANDS BANNER — animated marquee -->
       <div class="mt-20 pt-10 border-t border-bw-border">
         <p class="text-xs font-semibold uppercase tracking-widest text-bw-muted mb-8">Trusted by growing brands worldwide</p>
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
-          <span class="font-display text-xl font-bold tracking-widest text-white">STUDIO</span>
-          <span class="font-display text-xl font-black tracking-wider text-white">NOVA</span>
-          <span class="font-display text-xl font-bold tracking-widest text-white">LUMINA</span>
-          <span class="font-display text-xl font-black tracking-tight text-white">PULSE</span>
-          <span class="font-display text-xl font-bold tracking-widest text-white">VERTICE</span>
-          <span class="font-display text-xl font-bold tracking-widest text-white">ORBIT</span>
-          <span class="font-display text-xl font-black tracking-wider text-white">HALCYON</span>
-          <span class="font-display text-xl font-bold tracking-tight text-white">FORGE&nbsp;CO.</span>
+        <div class="marquee-viewport overflow-hidden">
+          <div class="marquee-track opacity-60 grayscale hover:grayscale-0 transition-all">
+            <span class="font-display text-xl font-bold tracking-widest text-white">STUDIO</span>
+            <span class="font-display text-xl font-black tracking-wider text-white">NOVA</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">LUMINA</span>
+            <span class="font-display text-xl font-black tracking-tight text-white">PULSE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">VERTICE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white">ORBIT</span>
+            <span class="font-display text-xl font-black tracking-wider text-white">HALCYON</span>
+            <span class="font-display text-xl font-bold tracking-tight text-white">FORGE&nbsp;CO.</span>
+            <!-- duplicate set for seamless loop -->
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">STUDIO</span>
+            <span class="font-display text-xl font-black tracking-wider text-white" aria-hidden="true">NOVA</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">LUMINA</span>
+            <span class="font-display text-xl font-black tracking-tight text-white" aria-hidden="true">PULSE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">VERTICE</span>
+            <span class="font-display text-xl font-bold tracking-widest text-white" aria-hidden="true">ORBIT</span>
+            <span class="font-display text-xl font-black tracking-wider text-white" aria-hidden="true">HALCYON</span>
+            <span class="font-display text-xl font-bold tracking-tight text-white" aria-hidden="true">FORGE&nbsp;CO.</span>
+          </div>
         </div>
       </div>
 
@@ -609,7 +710,7 @@
         <!-- Founder Photo -->
         <div class="lg:col-span-5">
           <div class="founder-photo-frame">
-            <img src="https://abdullahgull.github.io/images/Abdullah_Work_5_upscale_upscaled.html.jpg"
+            <img src="https://gull-of-group.github.io/abdullah-gull-photo.jpg"
                  alt="Abdullah Gull, Founder of Gull Group"
                  class="w-full h-full object-cover aspect-[4/5]" loading="lazy" />
           </div>
@@ -777,9 +878,9 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bw-card rounded-3xl p-8 sm:p-12 border-white/20">
         <div class="text-center max-w-xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-widest text-gold">Get Started Today</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Request Your Free Growth Audit</h2>
-          <p class="text-sm text-bw-muted mt-2">Tell us about your website, Amazon store, or outreach setup — Abdullah and the team will review it and reply with a clear, no-obligation plan.</p>
+          <span class="text-xs font-bold uppercase tracking-widest text-gold">Let's Build Something</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Get In Touch</h2>
+          <p class="text-sm text-bw-muted mt-2">One message, three ways to grow. Tell Abdullah and the team what you're working on — website, Amazon store, or outreach — and get a clear, honest plan back.</p>
         </div>
 
         <form onsubmit="event.preventDefault(); alert('Thank you! Your audit request has been submitted.');" class="space-y-4">
@@ -826,7 +927,7 @@
           </div>
 
           <button type="submit" class="w-full btn-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest mt-4">
-            Submit Free Audit Request
+            Send Message &amp; Get My Free Audit
           </button>
           <p class="text-center text-[11px] text-bw-muted">No spam, no sales pressure — just an honest look at what's working and what isn't.</p>
         </form>
