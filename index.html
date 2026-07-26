@@ -44,6 +44,12 @@
     "jobTitle": "Founder"
   },
   "description": "Gull Group is the umbrella for Gull Web, Gull Commerce, and Gull Outreach — web development, Amazon marketplace management, and B2B lead generation.",
+  "sameAs": [
+    "https://clutch.co/profile/gull-group",
+    "https://www.goodfirms.co/company/gull-group",
+    "https://www.designrush.com/agency/profile/gull-group",
+    "https://www.crunchbase.com/organization/gull-group"
+  ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://gull-of-group.github.io/#gull-web", "description": "Full-stack websites, e-commerce stores and landing pages." } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Amazon Marketplace Management", "url": "https://gull-of-group.github.io/#gull-commerce", "description": "Amazon listing optimization, PPC advertising and storefront design." } },
@@ -76,6 +82,47 @@
     { "@type": "ListItem", "position": 3, "name": "Gull Commerce", "item": "https://gull-of-group.github.io/#gull-commerce" },
     { "@type": "ListItem", "position": 4, "name": "Gull Outreach", "item": "https://gull-of-group.github.io/Gull-B2B-outreach/" }
   ]
+}
+</script>
+
+<!-- Structured Data: Founder (Person) — E-E-A-T signal linking Gull Group to Abdullah Gull's verified profiles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://gull-of-group.github.io/#founder",
+  "name": "Abdullah Gull",
+  "jobTitle": "Founder & Amazon PPC / E-commerce Consultant",
+  "worksFor": { "@type": "Organization", "name": "Gull Group", "url": "https://gull-of-group.github.io/" },
+  "description": "Founder of Gull Group with roughly 8 years of hands-on experience across web development, Amazon marketplace management, and B2B outreach.",
+  "knowsAbout": [
+    "Amazon PPC Management",
+    "Amazon SEO (A9/A10 Algorithm)",
+    "Product Listing Optimization",
+    "Web Development",
+    "B2B Lead Generation"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/abdullah-gull-amazon/",
+    "https://www.upwork.com/freelancers/~0104014e457db310f6",
+    "https://twitter.com/abdullahgullamz",
+    "https://www.youtube.com/@abdullahgullamazon"
+  ]
+}
+</script>
+
+<!-- Structured Data: ProfessionalService (ties Organization + Founder together for richer entity understanding) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://gull-of-group.github.io/#service",
+  "name": "Gull Group",
+  "url": "https://gull-of-group.github.io/",
+  "image": "https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png",
+  "description": "Gull Group is a growth agency delivering web development, Amazon marketplace management, and B2B outreach under one team.",
+  "founder": { "@id": "https://gull-of-group.github.io/#founder" },
+  "areaServed": "Worldwide"
 }
 </script>
 
@@ -632,10 +679,19 @@
   </div>
 </div>
 
+<!-- FEATURED ON — outbound directory strip. IMPORTANT: only keep an entry live once the profile actually exists at that URL. -->
+<div class="mt-10 pt-8 border-t border-bw-border/60 text-center">
+  <p class="text-xs font-semibold uppercase tracking-widest text-bw-muted mb-6">Featured On</p>
+  <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+    <a href="https://clutch.co/profile/gull-group" target="_blank" rel="noopener" class="text-sm font-bold text-bw-muted hover:text-white transition-colors">Clutch</a>
+    <a href="https://www.goodfirms.co/company/gull-group" target="_blank" rel="noopener" class="text-sm font-bold text-bw-muted hover:text-white transition-colors">GoodFirms</a>
+    <a href="https://www.designrush.com/agency/profile/gull-group" target="_blank" rel="noopener" class="text-sm font-bold text-bw-muted hover:text-white transition-colors">DesignRush</a>
+    <a href="https://www.crunchbase.com/organization/gull-group" target="_blank" rel="noopener" class="text-sm font-bold text-bw-muted hover:text-white transition-colors">Crunchbase</a>
+    <a href="https://sell.amazon.com/services" target="_blank" rel="noopener" class="text-sm font-bold text-bw-muted hover:text-white transition-colors">Amazon SPN</a>
+  </div>
+</div>
 
-  <!-- ============================================================
-       DETAILED SUB-BRANDS & SERVICES BREAKDOWN
-       ============================================================ -->
+
   <section id="about" class="py-24 bg-bw-bg border-t border-bw-border relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -762,8 +818,8 @@
         <!-- Founder Photo -->
         <div class="lg:col-span-5">
           <div class="founder-photo-frame">
-            <img src="https://gull-of-group.github.io/abdullah-gull-photo.jpg"
-                 alt="Abdullah Gull, Founder of Gull Group"
+            <img src="https://gull-of-group.github.io/abdullah-gull-photo.jpg"alt="Abdullah Gull, Founder of Gull Of Group"
+                 width="480" height="600"
                  class="w-full h-full object-cover aspect-[4/5]" loading="lazy" />
           </div>
         </div>
@@ -771,7 +827,13 @@
       <!-- Founder Content -->
         <div class="lg:col-span-7">
           <span class="text-xs font-bold uppercase tracking-widest text-gold">Founder</span>
-          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 mb-6">Abdullah Gull</h2>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2 mb-1">Abdullah Gull</h2>
+          <p class="text-xs sm:text-sm text-bw-muted font-semibold mb-4">Amazon Ads Certified Consultant &middot; 8+ Years, Web Dev &amp; B2B Outreach</p>
+          <div class="flex items-center gap-3 mb-6">
+            <a href="https://www.linkedin.com/in/abdullah-gull-amazon/" target="_blank" rel="noopener" class="text-xs text-gold hover:text-white transition-colors underline underline-offset-2">LinkedIn</a>
+            <a href="https://www.upwork.com/freelancers/~0104014e457db310f6" target="_blank" rel="noopener" class="text-xs text-gold hover:text-white transition-colors underline underline-offset-2">Upwork</a>
+            <a href="https://www.youtube.com/@abdullahgullamazon" target="_blank" rel="noopener" class="text-xs text-gold hover:text-white transition-colors underline underline-offset-2">YouTube</a>
+          </div>
  
           <p class="text-sm sm:text-base text-bw-muted leading-relaxed mb-4">
             Most agencies make you piece together three different vendors — one for your website, one for your Amazon store, one for the outbound emails chasing new customers — and then leave you to make them agree on a single strategy. Abdullah Gull started Gull Group because he was already doing all three himself, for nearly 8 years, and saw no reason clients should have to juggle three separate teams to get one connected result.
